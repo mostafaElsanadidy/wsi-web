@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>WSI - إضافة موقف</title>
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css"
+    >
+</head>
+
+
+<body>
+
+<div class="app-layout">
+
+    <!-- =====================================
+         Sidebar
+    ====================================== -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+
+            <div class="logo-mark">
+                W
+            </div>
+
+            <span>
+                WSI
+            </span>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <a
+                href="../index.html"
+                class="nav-item"
+            >
+                <span class="nav-icon">⌂</span>
+                <span>الرئيسية</span>
+            </a>
+
+
+            <a
+                href="situations.html"
+                class="nav-item active"
+            >
+                <span class="nav-icon">▣</span>
+                <span>المواقف</span>
+            </a>
+
+
+            <a
+                href="ai-analysis.html"
+                class="nav-item"
+            >
+                <span class="nav-icon">✦</span>
+                <span>تحليل المواقف</span>
+            </a>
+
+
+            <a
+                href="my-weaknesses.html"
+                class="nav-item"
+            >
+                <span class="nav-icon">◎</span>
+                <span>نقاط التطوير</span>
+            </a>
+
+
+            <a
+                href="progress.html"
+                class="nav-item"
+            >
+                <span class="nav-icon">↗</span>
+                <span>متابعة التقدم</span>
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <a
+                href="#"
+                class="nav-item"
+            >
+                <span class="nav-icon">⚙</span>
+                <span>الإعدادات</span>
+            </a>
+
+
+            <a
+                href="#"
+                class="nav-item"
+            >
+                <span class="nav-icon">?</span>
+                <span>المساعدة والدعم</span>
+            </a>
+
+
+            <div class="sidebar-user">
+
+                <div class="user-avatar">
+                    م
+                </div>
+
+                <div class="user-info">
+
+                    <strong>
+                        مصطفى
+                    </strong>
+
+                    <span>
+                        الحساب الشخصي
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================
+         Main Content
+    ====================================== -->
+
+    <main class="main-content">
+
+        <!-- Header -->
+
+        <header class="page-header">
+
+            <div>
+
+                <h1>
+                    إضافة موقف جديد
+                </h1>
+
+                <p>
+                    اكتب ما حدث معك بالتفصيل، ثم دع النظام يساعدك على فهم الموقف.
+                </p>
+
+            </div>
+
+
+            <div class="header-actions">
+
+                <button
+                    class="icon-button"
+                    type="button"
+                >
+                    🔔
+                </button>
+
+
+                <div class="header-avatar">
+                    م
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =====================================
+             Form
+        ====================================== -->
+
+        <section class="form-card">
+
+            <form id="situationForm">
+
+                <!-- What happened -->
+
+                <div class="form-group">
+
+                    <label for="situationTitle">
+                        عنوان الموقف
+                        <span class="required">*</span>
+                    </label>
+
+                    <input
+                        id="situationTitle"
+                        name="title"
+                        type="text"
+                        placeholder="مثال: نقاش مع زميل في العمل"
+                        maxlength="150"
+                    >
+
+                    <small>
+                        اكتب عنوانًا مختصرًا يساعدك على تذكر الموقف.
+                    </small>
+
+                    <div
+                        class="field-error"
+                        id="titleError"
+                    ></div>
+
+                </div>
+
+
+                <!-- Details -->
+
+                <div class="form-group">
+
+                    <label for="situationDescription">
+                        ماذا حدث؟
+                        <span class="required">*</span>
+                    </label>
+
+                    <textarea
+                        id="situationDescription"
+                        name="description"
+                        rows="7"
+                        maxlength="3000"
+                        placeholder="اكتب ما حدث بالتفصيل... ماذا حدث؟ من كان موجودًا؟ وكيف تطور الموقف؟"
+                    ></textarea>
+
+                    <div class="textarea-footer">
+
+                        <small>
+                            حاول كتابة الأحداث كما حدثت دون الحكم على نفسك.
+                        </small>
+
+                        <span id="characterCount">
+                            0 / 3000
+                        </span>
+
+                    </div>
+
+                    <div
+                        class="field-error"
+                        id="descriptionError"
+                    ></div>
+
+                </div>
+
+
+                <!-- Category -->
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="category">
+                            التصنيف
+                            <span class="required">*</span>
+                        </label>
+
+                        <select
+                            id="category"
+                            name="category"
+                        >
+
+                            <option value="">
+                                اختر التصنيف
+                            </option>
+
+                            <option value="communication">
+                                التواصل
+                            </option>
+
+                            <option value="relationships">
+                                العلاقات
+                            </option>
+
+                            <option value="work">
+                                العمل
+                            </option>
+
+                            <option value="social">
+                                اجتماعي
+                            </option>
+
+                            <option value="self">
+                                شخصي
+                            </option>
+
+                            <option value="other">
+                                أخرى
+                            </option>
+
+                        </select>
+
+                        <div
+                            class="field-error"
+                            id="categoryError"
+                        ></div>
+
+                    </div>
+
+
+                    <!-- Date -->
+
+                    <div class="form-group">
+
+                        <label for="situationDate">
+                            التاريخ
+                        </label>
+
+                        <input
+                            id="situationDate"
+                            name="date"
+                            type="date"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- Tags -->
+
+                <div class="form-group">
+
+                    <label for="tags">
+                        الوسوم
+                    </label>
+
+                    <input
+                        id="tags"
+                        name="tags"
+                        type="text"
+                        placeholder="مثال: غضب، عمل، خلاف"
+                    >
+
+                    <small>
+                        افصل بين الوسوم باستخدام الفاصلة.
+                    </small>
+
+                </div>
+
+
+                <!-- Feeling -->
+
+                <div class="form-group">
+
+                    <label for="feeling">
+                        كيف تشعر تجاه هذا الموقف الآن؟
+                    </label>
+
+                    <textarea
+                        id="feeling"
+                        name="feeling"
+                        rows="4"
+                        maxlength="1000"
+                        placeholder="مثال: ما زلت أشعر بالانزعاج لأنني لم أستطع التعبير عن رأيي بهدوء."
+                    ></textarea>
+
+                </div>
+
+
+                <!-- Reflection -->
+
+                <div class="form-group">
+
+                    <label for="reflection">
+                        هل هناك شيء كنت تتمنى أن تفعله بشكل مختلف؟
+                    </label>
+
+                    <textarea
+                        id="reflection"
+                        name="reflection"
+                        rows="4"
+                        maxlength="1000"
+                        placeholder="اكتب أي شيء تعتقد أنه كان يمكن أن يسير بشكل مختلف."
+                    ></textarea>
+
+                </div>
+
+
+                <!-- AI Notice -->
+
+                <div class="ai-notice">
+
+                    <div class="ai-notice-icon">
+                        ✦
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            ماذا سيحدث بعد الحفظ؟
+                        </strong>
+
+                        <p>
+                            يمكن للنظام تحليل الموقف واقتراح نقاط قد تكون مفيدة للتطوير.
+                            لن تتم إضافة أي نقطة تطوير إلى حسابك إلا بعد مراجعتها وتأكيدها منك.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Actions -->
+
+                <div class="form-actions">
+
+                    <a
+                        href="situations.html"
+                        class="btn btn-secondary"
+                    >
+                        إلغاء
+                    </a>
+
+
+                    <button
+                        type="button"
+                        id="saveDraftButton"
+                        class="btn btn-outline"
+                    >
+                        حفظ كمسودة
+                    </button>
+
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary"
+                    >
+                        حفظ وتحليل الموقف
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<script src="../js/app.js"></script>
+
+<script src="../js/add-situation.js"></script>
+
+</body>
+
+</html>

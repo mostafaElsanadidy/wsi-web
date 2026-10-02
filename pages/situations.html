@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>WSI - المواقف</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+<div class="app-layout">
+
+    <!-- =========================
+         Sidebar
+    ========================== -->
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+            <div class="logo-mark">W</div>
+            <span>WSI</span>
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="../index.html" class="nav-item">
+                <span class="nav-icon">⌂</span>
+                <span>الرئيسية</span>
+            </a>
+
+            <a href="situations.html" class="nav-item active">
+                <span class="nav-icon">▣</span>
+                <span>المواقف</span>
+            </a>
+
+            <a href="ai-analysis.html" class="nav-item">
+                <span class="nav-icon">✦</span>
+                <span>تحليل المواقف</span>
+            </a>
+
+            <a href="my-weaknesses.html" class="nav-item">
+                <span class="nav-icon">◎</span>
+                <span>نقاط التطوير</span>
+            </a>
+
+            <a href="progress.html" class="nav-item">
+                <span class="nav-icon">↗</span>
+                <span>متابعة التقدم</span>
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <a href="#" class="nav-item">
+                <span class="nav-icon">⚙</span>
+                <span>الإعدادات</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <span class="nav-icon">?</span>
+                <span>المساعدة والدعم</span>
+            </a>
+
+            <div class="sidebar-user">
+
+                <div class="user-avatar">
+                    م
+                </div>
+
+                <div class="user-info">
+                    <strong>مصطفى</strong>
+                    <span>الحساب الشخصي</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =========================
+         Main Content
+    ========================== -->
+    <main class="main-content">
+
+        <!-- Header -->
+        <header class="page-header">
+
+            <div>
+
+                <h1>المواقف</h1>
+
+                <p>
+                    سجّل المواقف التي مررت بها لتفهم نفسك بشكل أفضل.
+                </p>
+
+            </div>
+
+            <div class="header-actions">
+
+                <button class="icon-button">
+                    🔔
+                </button>
+
+                <div class="header-avatar">
+                    م
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =========================
+             Page Actions
+        ========================== -->
+        <section class="page-actions">
+
+            <div class="page-action-info">
+
+                <h2>جميع المواقف</h2>
+
+                <p>
+                    راجع المواقف التي سجلتها وتابع حالة تحليلها.
+                </p>
+
+            </div>
+
+            <a
+                href="add-situation.html"
+                class="btn btn-primary"
+            >
+                + إضافة موقف جديد
+            </a>
+
+        </section>
+
+
+        <!-- =========================
+             Filters
+        ========================== -->
+        <section class="filters-card">
+
+            <div class="search-box">
+
+                <span class="search-icon">⌕</span>
+
+                <input
+                    type="text"
+                    id="situationSearch"
+                    placeholder="ابحث في المواقف..."
+                >
+
+            </div>
+
+
+            <select id="categoryFilter">
+
+                <option value="">كل التصنيفات</option>
+
+                <option value="communication">
+                    التواصل
+                </option>
+
+                <option value="relationships">
+                    العلاقات
+                </option>
+
+                <option value="work">
+                    العمل
+                </option>
+
+                <option value="social">
+                    اجتماعي
+                </option>
+
+            </select>
+
+
+            <select id="statusFilter">
+
+                <option value="">كل الحالات</option>
+
+                <option value="analyzed">
+                    تم التحليل
+                </option>
+
+                <option value="draft">
+                    مسودة
+                </option>
+
+                <option value="pending">
+                    بانتظار المراجعة
+                </option>
+
+            </select>
+
+        </section>
+
+
+        <!-- =========================
+             Situations Table
+        ========================== -->
+        <section class="card situations-card">
+
+            <div class="table-wrapper">
+
+                <table class="situations-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>الموقف</th>
+
+                            <th>التصنيف</th>
+
+                            <th>التاريخ</th>
+
+                            <th>الحالة</th>
+
+                            <th>الإجراء</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="situationsTableBody">
+
+                        <tr
+                            data-title="نقاش مع زميل في العمل"
+                            data-category="communication"
+                            data-status="analyzed"
+                        >
+
+                            <td>
+
+                                <div class="situation-title">
+
+                                    <div class="situation-icon">
+                                        💬
+                                    </div>
+
+                                    <div>
+
+                                        <strong>
+                                            نقاش مع زميل في العمل
+                                        </strong>
+
+                                        <span>
+                                            نقاش حدث أثناء العمل
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+
+                            <td>
+                                <span class="category-badge">
+                                    التواصل
+                                </span>
+                            </td>
+
+
+                            <td>
+                                أمس
+                            </td>
+
+
+                            <td>
+
+                                <span class="status-badge status-success">
+                                    تم التحليل
+                                </span>
+
+                            </td>
+
+
+                            <td>
+
+                                <a
+                                    href="ai-analysis.html"
+                                    class="table-action"
+                                >
+                                    عرض
+                                </a>
+
+                            </td>
+
+                        </tr>
+
+
+                        <tr
+                            data-title="خلاف عائلي"
+                            data-category="relationships"
+                            data-status="draft"
+                        >
+
+                            <td>
+
+                                <div class="situation-title">
+
+                                    <div class="situation-icon">
+                                        👥
+                                    </div>
+
+                                    <div>
+
+                                        <strong>
+                                            خلاف عائلي
+                                        </strong>
+
+                                        <span>
+                                            موقف حدث داخل الأسرة
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+
+                            <td>
+                                <span class="category-badge">
+                                    العلاقات
+                                </span>
+                            </td>
+
+
+                            <td>
+                                منذ 3 أيام
+                            </td>
+
+
+                            <td>
+
+                                <span class="status-badge status-warning">
+                                    مسودة
+                                </span>
+
+                            </td>
+
+
+                            <td>
+
+                                <a
+                                    href="add-situation.html"
+                                    class="table-action"
+                                >
+                                    متابعة
+                                </a>
+
+                            </td>
+
+                        </tr>
+
+
+                        <tr
+                            data-title="تأخر في تسليم مهمة"
+                            data-category="work"
+                            data-status="analyzed"
+                        >
+
+                            <td>
+
+                                <div class="situation-title">
+
+                                    <div class="situation-icon">
+                                        📋
+                                    </div>
+
+                                    <div>
+
+                                        <strong>
+                                            تأخر في تسليم مهمة
+                                        </strong>
+
+                                        <span>
+                                            مهمة لم يتم تسليمها في الوقت
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+
+                            <td>
+                                <span class="category-badge">
+                                    العمل
+                                </span>
+                            </td>
+
+
+                            <td>
+                                منذ 5 أيام
+                            </td>
+
+
+                            <td>
+
+                                <span class="status-badge status-success">
+                                    تم التحليل
+                                </span>
+
+                            </td>
+
+
+                            <td>
+
+                                <a
+                                    href="ai-analysis.html"
+                                    class="table-action"
+                                >
+                                    عرض
+                                </a>
+
+                            </td>
+
+                        </tr>
+
+
+                        <tr
+                            data-title="موقف مع أحد الأصدقاء"
+                            data-category="social"
+                            data-status="analyzed"
+                        >
+
+                            <td>
+
+                                <div class="situation-title">
+
+                                    <div class="situation-icon">
+                                        🤝
+                                    </div>
+
+                                    <div>
+
+                                        <strong>
+                                            موقف مع أحد الأصدقاء
+                                        </strong>
+
+                                        <span>
+                                            اختلاف في وجهات النظر
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+
+                            <td>
+                                <span class="category-badge">
+                                    اجتماعي
+                                </span>
+                            </td>
+
+
+                            <td>
+                                منذ أسبوع
+                            </td>
+
+
+                            <td>
+
+                                <span class="status-badge status-success">
+                                    تم التحليل
+                                </span>
+
+                            </td>
+
+
+                            <td>
+
+                                <a
+                                    href="ai-analysis.html"
+                                    class="table-action"
+                                >
+                                    عرض
+                                </a>
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+            <!-- =========================
+                 Pagination
+            ========================== -->
+            <div class="pagination">
+
+                <span class="pagination-info">
+                    عرض 1–4 من 24 موقف
+                </span>
+
+                <div class="pagination-buttons">
+
+                    <button class="pagination-button">
+                        →
+                    </button>
+
+                    <button class="pagination-button active">
+                        1
+                    </button>
+
+                    <button class="pagination-button">
+                        2
+                    </button>
+
+                    <button class="pagination-button">
+                        3
+                    </button>
+
+                    <button class="pagination-button">
+                        ←
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<script src="../js/app.js"></script>
+
+<script src="../js/situations.js"></script>
+
+</body>
+</html>

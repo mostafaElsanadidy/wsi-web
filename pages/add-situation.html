@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>WSI - إضافة موقف</title>
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css"
+    >
+</head>
+
+<body>
+
+<div class="app-layout">
+
+    <!-- =========================================
+         Sidebar
+    ========================================== -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+
+            <div class="logo-mark">
+                W
+            </div>
+
+            <span>WSI</span>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <a
+                href="../index.html"
+                class="nav-item"
+            >
+                <span class="nav-icon">⌂</span>
+                <span>الرئيسية</span>
+            </a>
+
+
+            <a
+                href="situations.html"
+                class="nav-item active"
+            >
+                <span class="nav-icon">▣</span>
+                <span>المواقف</span>
+            </a>
+
+
+            <a
+                href="ai-analysis.html"
+                class="nav-item"
+            >
+                <span class="nav-icon">✦</span>
+                <span>تحليل المواقف</span>
+            </a>
+
+
+            <a
+                href="my-weaknesses.html"
+                class="nav-item"
+            >
+                <span class="nav-icon">◎</span>
+                <span>نقاط التطوير</span>
+            </a>
+
+
+            <a
+                href="progress.html"
+                class="nav-item"
+            >
+                <span class="nav-icon">↗</span>
+                <span>متابعة التقدم</span>
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <a
+                href="#"
+                class="nav-item"
+            >
+                <span class="nav-icon">⚙</span>
+                <span>الإعدادات</span>
+            </a>
+
+
+            <a
+                href="#"
+                class="nav-item"
+            >
+                <span class="nav-icon">?</span>
+                <span>المساعدة والدعم</span>
+            </a>
+
+
+            <div class="sidebar-user">
+
+                <div class="user-avatar">
+                    م
+                </div>
+
+                <div class="user-info">
+
+                    <strong>
+                        مصطفى
+                    </strong>
+
+                    <span>
+                        الحساب الشخصي
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =========================================
+         Main Content
+    ========================================== -->
+
+    <main class="main-content">
+
+        <header class="page-header">
+
+            <div>
+
+                <h1>
+                    إضافة موقف جديد
+                </h1>
+
+                <p>
+                    سجّل الموقف بالطريقة التي تناسبك.
+                </p>
+
+            </div>
+
+
+            <div class="header-actions">
+
+                <button
+                    class="icon-button"
+                    type="button"
+                >
+                    🔔
+                </button>
+
+                <div class="header-avatar">
+                    م
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =====================================
+             Input Method
+        ====================================== -->
+
+        <section class="input-method-card">
+
+            <div class="input-method-header">
+
+                <div>
+
+                    <h2>
+                        طريقة تسجيل الموقف
+                    </h2>
+
+                    <p>
+                        يمكنك كتابة الموقف أو تسجيله صوتيًا بالكامل.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="input-method-switch">
+
+                <button
+                    type="button"
+                    class="input-method active"
+                    id="textModeButton"
+                >
+
+                    <span class="method-icon">
+                        ✍
+                    </span>
+
+                    <span>
+
+                        <strong>
+                            الكتابة
+                        </strong>
+
+                        <small>
+                            إدخال الحقول يدويًا
+                        </small>
+
+                    </span>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="input-method"
+                    id="audioModeButton"
+                >
+
+                    <span class="method-icon">
+                        🎙
+                    </span>
+
+                    <span>
+
+                        <strong>
+                            الصوت
+                        </strong>
+
+                        <small>
+                            تسجيل الموقف بالكامل
+                        </small>
+
+                    </span>
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             TEXT MODE
+        ====================================== -->
+
+        <section
+            id="textMode"
+            class="input-mode"
+        >
+
+            <div class="form-card">
+
+                <!-- Title -->
+
+                <div class="form-group">
+
+                    <label for="situationTitle">
+                        عنوان الموقف
+                        <span>*</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="situationTitle"
+                        placeholder="مثال: نقاش مع زميل في العمل"
+                        maxlength="150"
+                    >
+
+                </div>
+
+
+                <!-- Description -->
+
+                <div class="form-group">
+
+                    <div class="label-row">
+
+                        <label for="situationDescription">
+                            ماذا حدث؟
+                            <span>*</span>
+                        </label>
+
+                        <span
+                            id="descriptionCounter"
+                            class="character-counter"
+                        >
+                            0 / 3000
+                        </span>
+
+                    </div>
+
+                    <textarea
+                        id="situationDescription"
+                        rows="6"
+                        maxlength="3000"
+                        placeholder="اكتب ما حدث بالتفصيل..."
+                    ></textarea>
+
+                </div>
+
+
+                <!-- Category + Date -->
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="situationCategory">
+                            التصنيف
+                            <span>*</span>
+                        </label>
+
+                        <select id="situationCategory">
+
+                            <option value="">
+                                اختر التصنيف
+                            </option>
+
+                            <option value="communication">
+                                التواصل
+                            </option>
+
+                            <option value="relationships">
+                                العلاقات
+                            </option>
+
+                            <option value="work">
+                                العمل
+                            </option>
+
+                            <option value="social">
+                                اجتماعي
+                            </option>
+
+                            <option value="self_control">
+                                التحكم الذاتي
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="situationDate">
+                            التاريخ
+                        </label>
+
+                        <input
+                            type="date"
+                            id="situationDate"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- Tags -->
+
+                <div class="form-group">
+
+                    <label for="situationTags">
+                        الوسوم
+                    </label>
+
+                    <input
+                        type="text"
+                        id="situationTags"
+                        placeholder="مثال: خلاف، عمل، زميل"
+                    >
+
+                    <small class="field-hint">
+                        افصل بين الوسوم باستخدام الفاصلة.
+                    </small>
+
+                </div>
+
+
+                <!-- Feeling -->
+
+                <div class="form-group">
+
+                    <label for="situationFeeling">
+                        كيف تشعر تجاه هذا الموقف الآن؟
+                    </label>
+
+                    <textarea
+                        id="situationFeeling"
+                        rows="3"
+                        placeholder="اكتب شعورك الحالي..."
+                    ></textarea>
+
+                </div>
+
+
+                <!-- Reflection -->
+
+                <div class="form-group">
+
+                    <label for="situationReflection">
+                        هل هناك شيء كنت تتمنى أن تفعله بشكل مختلف؟
+                    </label>
+
+                    <textarea
+                        id="situationReflection"
+                        rows="3"
+                        placeholder="اكتب انعكاسك على الموقف..."
+                    ></textarea>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             AUDIO MODE
+        ====================================== -->
+
+        <section
+            id="audioMode"
+            class="input-mode hidden"
+        >
+
+            <div class="audio-card">
+
+                <div class="audio-header">
+
+                    <div class="audio-header-icon">
+                        🎙
+                    </div>
+
+                    <div>
+
+                        <h2>
+                            تسجيل الموقف صوتيًا
+                        </h2>
+
+                        <p>
+                            تحدث بحرية عن الموقف بدلًا من كتابة الحقول.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Recording Area -->
+
+                <div
+                    id="recordingArea"
+                    class="recording-area"
+                >
+
+                    <div
+                        id="microphoneCircle"
+                        class="microphone-circle"
+                    >
+                        🎙
+                    </div>
+
+
+                    <div
+                        id="recordingTimer"
+                        class="recording-timer"
+                    >
+                        00:00
+                    </div>
+
+
+                    <h3 id="recordingTitle">
+                        اضغط وابدأ في الحديث
+                    </h3>
+
+
+                    <p id="recordingDescription">
+                        يمكنك ذكر ما حدث، شعورك،
+                        وما كنت تتمنى فعله بشكل مختلف.
+                    </p>
+
+
+                    <button
+                        type="button"
+                        id="recordButton"
+                        class="record-button"
+                    >
+                        <span id="recordButtonIcon">
+                            ●
+                        </span>
+
+                        <span id="recordButtonText">
+                            بدء التسجيل
+                        </span>
+                    </button>
+
+
+                    <div class="audio-divider">
+
+                        <span>
+                            أو
+                        </span>
+
+                    </div>
+
+
+                    <label
+                        for="audioFileInput"
+                        class="audio-upload-button"
+                    >
+                        📁 اختيار ملف صوتي
+                    </label>
+
+                    <input
+                        type="file"
+                        id="audioFileInput"
+                        accept="audio/*"
+                        hidden
+                    >
+
+                </div>
+
+
+                <!-- Recorded Audio -->
+
+                <div
+                    id="audioPreview"
+                    class="audio-preview hidden"
+                >
+
+                    <div class="audio-preview-header">
+
+                        <strong>
+                            التسجيل الصوتي
+                        </strong>
+
+                        <button
+                            type="button"
+                            id="deleteAudioButton"
+                            class="delete-audio-button"
+                        >
+                            🗑 حذف
+                        </button>
+
+                    </div>
+
+
+                    <audio
+                        id="audioPlayer"
+                        controls
+                    ></audio>
+
+                </div>
+
+
+                <!-- Audio Notice -->
+
+                <div class="audio-notice">
+
+                    <div class="notice-icon">
+                        i
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            ماذا سيحدث بعد التسجيل؟
+                        </strong>
+
+                        <p>
+                            سيتم تحويل الصوت إلى نص، ثم يمكنك
+                            مراجعة النص وتعديله قبل تحليل الموقف.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             AI Notice
+        ====================================== -->
+
+        <div class="ai-input-notice">
+
+            <div class="ai-notice-icon">
+                ✦
+            </div>
+
+            <div>
+
+                <strong>
+                    التحليل يساعدك ولا يحكم عليك
+                </strong>
+
+                <p>
+                    سيتم تقديم اقتراحات فقط، ولن تتم إضافة أي
+                    نقطة تطوير إلى حسابك إلا بعد مراجعتها وتأكيدها منك.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================
+             Actions
+        ====================================== -->
+
+        <div class="form-actions">
+
+            <button
+                type="button"
+                id="cancelButton"
+                class="btn btn-secondary"
+            >
+                إلغاء
+            </button>
+
+
+            <button
+                type="button"
+                id="saveDraftButton"
+                class="btn btn-secondary"
+            >
+                حفظ كمسودة
+            </button>
+
+
+            <button
+                type="button"
+                id="saveAnalyzeButton"
+                class="btn btn-primary"
+            >
+                حفظ وتحليل الموقف →
+            </button>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<script src="../js/app.js"></script>
+<script src="../js/add-situation.js"></script>
+
+</body>
+</html>
